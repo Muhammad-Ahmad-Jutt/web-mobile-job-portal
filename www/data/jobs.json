@@ -1,0 +1,182 @@
+[
+  {
+    "id": 1,
+    "title": "Front-End Developer",
+    "company": "Tech Solutions Ltd",
+    "location": "Dublin, Ireland",
+    "type": "Full-time",
+    "salary": "€40,000 - €50,000",
+    "description": "Responsible for building responsive and interactive web interfaces using HTML, CSS, and JavaScript."
+  },
+  {
+    "id": 2,
+    "title": "Back-End Developer",
+    "company": "NextGen Software",
+    "location": "Lahore, Pakistan",
+    "type": "Full-time",
+    "salary": "PKR 120,000 - 180,000",
+    "description": "Design and develop server-side applications and APIs using Node.js, Python, or Java."
+  },
+  {
+    "id": 3,
+    "title": "Mobile App Developer",
+    "company": "AppWorks",
+    "location": "London, UK",
+    "type": "Full-time",
+    "salary": "£35,000 - £45,000",
+    "description": "Develop hybrid mobile applications using Cordova, React Native, or Flutter."
+  },
+  {
+    "id": 4,
+    "title": "UI/UX Designer",
+    "company": "Creative Minds",
+    "location": "Berlin, Germany",
+    "type": "Contract",
+    "salary": "€30/hr",
+    "description": "Design intuitive and engaging user interfaces for web and mobile applications."
+  },
+  {
+    "id": 5,
+    "title": "DevOps Engineer",
+    "company": "CloudTech",
+    "location": "Dublin, Ireland",
+    "type": "Full-time",
+    "salary": "€50,000 - €65,000",
+    "description": "Manage CI/CD pipelines, cloud infrastructure, and deployment automation."
+  },
+  {
+    "id": 6,
+    "title": "Data Analyst",
+    "company": "Insight Analytics",
+    "location": "Toronto, Canada",
+    "type": "Full-time",
+    "salary": "CAD 55,000 - 70,000",
+    "description": "Analyze datasets, create dashboards, and provide actionable insights."
+  },
+  {
+    "id": 7,
+    "title": "Cybersecurity Specialist",
+    "company": "SecureNet",
+    "location": "Dubai, UAE",
+    "type": "Full-time",
+    "salary": "AED 200,000 - 250,000",
+    "description": "Implement security protocols and monitor systems for vulnerabilities."
+  },
+  {
+    "id": 8,
+    "title": "Project Manager",
+    "company": "GlobalTech",
+    "location": "New York, USA",
+    "type": "Full-time",
+    "salary": "$80,000 - $95,000",
+    "description": "Coordinate software projects, manage teams, and ensure timely delivery."
+  },
+  {
+    "id": 9,
+    "title": "Software Tester",
+    "company": "QA Solutions",
+    "location": "Dublin, Ireland",
+    "type": "Full-time",
+    "salary": "€35,000 - €45,000",
+    "description": "Perform testing for web and mobile applications to ensure quality and functionality."
+  },
+  {
+    "id": 10,
+    "title": "Machine Learning Engineer",
+    "company": "AI Labs",
+    "location": "London, UK",
+    "type": "Full-time",
+    "salary": "£50,000 - £65,000",
+    "description": "Develop ML models and AI solutions for data-driven applications."
+  },
+  {
+    "id": 11,
+    "title": "Content Writer",
+    "company": "MediaWorks",
+    "location": "Dublin, Ireland",
+    "type": "Part-time",
+    "salary": "€20/hr",
+    "description": "Write and edit high-quality content for websites, blogs, and social media."
+  },
+  {
+    "id": 12,
+    "title": "Digital Marketing Specialist",
+    "company": "AdVision",
+    "location": "Berlin, Germany",
+    "type": "Full-time",
+    "salary": "€35,000 - €45,000",
+    "description": "Manage digital marketing campaigns and SEO strategies."
+  },
+  {
+    "id": 13,
+    "title": "System Administrator",
+    "company": "NetSecure",
+    "location": "Toronto, Canada",
+    "type": "Full-time",
+    "salary": "CAD 60,000 - 75,000",
+    "description": "Maintain network and server systems, and manage user accounts and permissions."
+  },
+  {
+    "id": 14,
+    "title": "Database Administrator",
+    "company": "DataCore",
+    "location": "New York, USA",
+    "type": "Full-time",
+    "salary": "$75,000 - $90,000",
+    "description": "Manage and optimize SQL and NoSQL databases for large-scale applications."
+  },
+  {
+    "id": 15,
+    "title": "Full Stack Developer",
+    "company": "Innovatech",
+    "location": "Lahore, Pakistan",
+    "type": "Full-time",
+    "salary": "PKR 150,000 - 220,000",
+    "description": "Develop both front-end and back-end components for web applications."
+  },
+  {
+    "id": 16,
+    "title": "Network Engineer",
+    "company": "Connectix",
+    "location": "Dubai, UAE",
+    "type": "Full-time",
+    "salary": "AED 180,000 - 220,000",
+    "description": "Design and maintain network infrastructure and troubleshoot connectivity issues."
+  },
+  {
+    "id": 17,
+    "title": "Graphic Designer",
+    "company": "CreativeHub",
+    "location": "London, UK",
+    "type": "Contract",
+    "salary": "£25/hr",
+    "description": "Create visual graphics for marketing campaigns and social media."
+  },
+  {
+    "id": 18,
+    "title": "IT Support Specialist",
+    "company": "TechAssist",
+    "location": "Dublin, Ireland",
+    "type": "Full-time",
+    "salary": "€30,000 - €40,000",
+    "description": "Provide technical support to users and troubleshoot hardware/software issues."
+  },
+  {
+    "id": 19,
+    "title": "E-commerce Manager",
+    "company": "ShopEasy",
+    "location": "Berlin, Germany",
+    "type": "Full-time",
+    "salary": "€40,000 - €55,000",
+    "description": "Manage online store operations, product listings, and marketing strategies."
+  },
+  {
+    "id": 20,
+    "title": "Mobile UI Designer",
+    "company": "AppVision",
+    "location": "Toronto, Canada",
+    "type": "Full-time",
+    "salary": "CAD 50,000 - 65,000",
+    "description": "Design user interfaces for mobile applications ensuring usability and aesthetics."
+  }
+]
