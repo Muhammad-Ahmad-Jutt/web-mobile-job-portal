@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Listings</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+    }
+    header {
+      background: #007bff;
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+    }
+    .job-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .job-item {
+      background: white;
+      margin: 10px;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .job-title {
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+    }
+    .job-company {
+      color: #555;
+      margin: 5px 0;
+    }
+    .job-location, .job-type, .job-salary {
+      font-size: 14px;
+      color: #777;
+    }
+    .job-description {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Job Listings</h1>
+  </header>
+
+  <ul id="jobList" class="job-list">
+    <!-- Jobs will be inserted here dynamically -->
+  </ul>
+
+  <script>
+    // Load jobs.json and map them
+    fetch('data/jobs.json')
+      .then(response => response.json())
+      .then(jobs => {
+        const jobList = document.getElementById('jobList');
+        jobs.forEach(job => {
+          const li = document.createElement('li');
+          li.classList.add('job-item');
+
+          li.innerHTML = `
+            <div class="job-title">${job.title}</div>
+            <div class="job-company">${job.company}</div>
+            <div class="job-location"><strong>Location:</strong> ${job.location}</div>
+            <div class="job-type"><strong>Type:</strong> ${job.type}</div>
+            <div class="job-salary"><strong>Salary:</strong> ${job.salary}</div>
+            <div class="job-description">${job.description}</div>
+          `;
+
+          jobList.appendChild(li);
+        });
+      })
+      .catch(error => {
+        console.error('Error loading jobs:', error);
+      });
+  </script>
+
+</body>
+</html>

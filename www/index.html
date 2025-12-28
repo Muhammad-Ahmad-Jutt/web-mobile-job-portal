@@ -36,15 +36,27 @@
         <link rel="stylesheet" href="css/index.css">
         <title>Hello World</title>
     </head>
-    <body>
-        <div class="app">
-            <h1>Apache Cordova</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
-            </div>
-        </div>
-        <script src="cordova.js"></script>
-        <script src="js/index.js"></script>
-    </body>
+<body>
+    <header class="app-header">
+        <h1>JobPortal</h1>
+    </header>
+
+    <main class="app-content">
+        <h2>Find Your Next Job</h2>
+        <p>Browse jobs and apply instantly</p>
+
+        <button id="browseJobsBtn">Browse Jobs</button>
+        <button id="profileBtn">My Profile</button>
+    </main>
+
+    <nav class="bottom-nav">
+        <button>Home</button>
+        <button>Jobs</button>
+        <button>Profile</button>
+    </nav>
+
+    <script src="cordova.js"></script>
+    <script src="js/index.js"></script>
+</body>
+
 </html>

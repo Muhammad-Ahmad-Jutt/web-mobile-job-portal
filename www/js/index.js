@@ -22,8 +22,13 @@
 document.addEventListener('deviceready', onDeviceReady, false);
 
 function onDeviceReady() {
-    // Cordova is now initialized. Have fun!
+    console.log('Device ready - Home Screen loaded');
 
-    console.log('Running application-' + cordova.platformId + '@' + cordova.version);
-    document.getElementById('deviceready').classList.add('ready');
+    document.getElementById('browseJobsBtn').addEventListener('click', () => {
+    window.location.href = 'jobs.html';
+    });
+
+    document.getElementById('profileBtn').addEventListener('click', () => {
+        alert('Profile clicked');
+    });
 }
