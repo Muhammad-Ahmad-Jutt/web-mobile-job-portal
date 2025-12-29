@@ -31,4 +31,7 @@ function onDeviceReady() {
     document.getElementById('profileBtn').addEventListener('click', () => {
         alert('Profile clicked');
     });
+    document.getElementById('MyJobsBtn').addEventListener('click',()=> {
+        window.location.href ='saved-jobs.html'
+    })
 }

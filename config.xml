@@ -1,22 +1,25 @@
-<?xml version='1.0' encoding='utf-8'?>
-<widget id="com.jobportal" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>JobPoral</name>
-    <description>
-        A sample Apache Cordova application that responds to the deviceready event.
-    </description>
-    <author email="dev@cordova.apache.org" href="https://cordova.apache.org">
-        Apache Cordova Team
-    </author>
-    <platform name="android">
-    
-    <icon src="resources/android/icons/new_logo.png" density="xxxhdpi" />    
-    <preference name="AndroidWindowSplashScreenAnimatedIcon" value="resources/android/splash/new_logo.png" />
-        <preference name="AndroidWindowSplashScreenBackground" value="#ffffff" />
+<widget id="com.jobportal" version="1.0.0"
+    xmlns="http://www.w3.org/ns/widgets"
+    xmlns:cdv="http://cordova.apache.org/ns/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
-        <preference name="AndroidWindowSplashScreenAnimationDuration" value="300" />
-    </platform>
+  <name>JobPortal</name>
+  <description>A sample Apache Cordova application</description>
+  <author email="dev@cordova.apache.org" href="https://cordova.apache.org">
+    Apache Cordova Team
+  </author>
 
-    <content src="index.html" />
-    <allow-intent href="http://*/*" />
-    <allow-intent href="https://*/*" />
+  <platform name="android">
+    <icon src="resources/android/icons/new_logo.png" density="xxxhdpi"/>
+    <preference name="AndroidWindowSplashScreenAnimatedIcon" value="resources/android/splash/new_logo.png"/>
+    <preference name="AndroidWindowSplashScreenBackground" value="#ffffff"/>
+    <preference name="AndroidWindowSplashScreenAnimationDuration" value="300"/>
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+  </platform>
+
+  <content src="index.html"/>
+  <allow-intent href="http://*/*"/>
+  <allow-intent href="https://*/*"/>
 </widget>
