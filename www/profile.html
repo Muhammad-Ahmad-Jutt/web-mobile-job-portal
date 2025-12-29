@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/applyjob.css">
+  <title>My Profile</title>
+</head>
+<body>
+  <header>
+    <h1>My Profile</h1>
+  </header>
+  <main>
+    <div id="profileView" style="display: block;">
+      <div class="profile-item">
+        <label><strong>Name:</strong> <span id="viewName"></span></label>
+      </div>
+      <div class="profile-item">
+        <label><strong>Email:</strong> <span id="viewEmail"></span></label>
+      </div>
+      <div class="profile-item">
+        <label><strong>Phone:</strong> <span id="viewPhone"></span></label>
+      </div>
+      <div class="profile-item">
+        <label><strong>Bio:</strong> <span id="viewBio"></span></label>
+      </div>
+      <div class="profile-item">
+        <label><strong>Profile Picture:</strong></label>
+        <img id="viewPic" src="" alt="Profile Picture" style="max-width: 200px; display: none;">
+      </div>
+      <button id="editBtn">Edit Profile</button>
+    </div>
+
+    <form id="profileForm" style="display: none;">
+      <label for="name">Name:</label>
+      <input type="text" id="name" required>
+<br />
+      <label for="email">Email:</label>
+      <input type="email" id="email" required>
+<br />
+      <label for="phone">Phone:</label>
+      <input type="tel" id="phone">
+<br />
+      <label for="bio">Bio:</label>
+      <textarea id="bio"></textarea>
+<br />
+      <label>Profile Picture:</label>
+      <img id="profilePic" src="" alt="Profile Picture" style="max-width: 200px; display: none;">
+      <input type="file" id="picInput" accept="image/*" capture="camera">
+<br />
+      <button type="submit">Save Profile</button>
+<br />
+      <button type="button" id="cancelBtn">Cancel</button>
+    </form>
+  </main>
+  <script src="js/profile.js"></script>
+</body>
+</html>
