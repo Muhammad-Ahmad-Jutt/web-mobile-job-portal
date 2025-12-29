@@ -15,8 +15,8 @@
     <preference name="AndroidWindowSplashScreenBackground" value="#ffffff"/>
     <preference name="AndroidWindowSplashScreenAnimationDuration" value="300"/>
 
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
   </platform>
 
   <content src="index.html"/>

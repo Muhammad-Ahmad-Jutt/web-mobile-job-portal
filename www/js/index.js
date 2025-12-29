@@ -24,12 +24,33 @@ document.addEventListener('deviceready', onDeviceReady, false);
 function onDeviceReady() {
     console.log('Device ready - Home Screen loaded');
 
+    // Request location permission if not granted
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+            function(position) {
+                console.log('Location access granted. Position:', position);
+                localStorage.setItem('userLat', position.coords.latitude);
+                localStorage.setItem('userLng', position.coords.longitude);
+            },
+            function(error) {
+                console.log('Location access denied or error:', error);
+                localStorage.removeItem('userLat');
+                localStorage.removeItem('userLng');
+            },
+            {
+                enableHighAccuracy: true,
+                timeout: 10000,
+                maximumAge: 300000
+            }
+        );
+    }
+
     document.getElementById('browseJobsBtn').addEventListener('click', () => {
     window.location.href = 'jobs.html';
     });
 
     document.getElementById('profileBtn').addEventListener('click', () => {
-        alert('Profile clicked');
+        window.location.href = 'profile.html';
     });
     document.getElementById('MyJobsBtn').addEventListener('click',()=> {
         window.location.href ='saved-jobs.html'

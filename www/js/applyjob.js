@@ -3,61 +3,54 @@
 
 const params = new URLSearchParams(window.location.search);
 const jobId = parseInt(params.get('id'));
+let currentJob = null;
 
-function saveJobApplication(jobId, fileName) {
+fetch('data/jobs.json')
+  .then(response => response.json())
+  .then(jobs => {
+    currentJob = jobs.find(job => job.id === jobId);
+    if (!currentJob) {
+      document.body.innerHTML = '<h2>Job not found</h2>';
+      return;
+    }
+    document.getElementById('title').textContent += currentJob.title;
+    document.getElementById('company').textContent += currentJob.company;
+    document.getElementById('location').textContent += currentJob.location;
+    document.getElementById('type').textContent += currentJob.type;
+    document.getElementById('salary').textContent += currentJob.salary;
+    document.getElementById('description').textContent += currentJob.description;
+  })
+  .catch(error => {
+    console.error('Error loading job:', error);
+    document.body.innerHTML = '<h2>Error loading job</h2>';
+  });
+
+function saveJobApplication(jobId, fileName, job, callback) {
   const data = {
     job_id: jobId,
     file_name: fileName,
-    timestamp: new Date().toISOString()
+    timestamp: new Date().toISOString(),
+    job: job
   };
 
-  const fileNameOnDevice = 'jobApplications.json';
-
-  window.resolveLocalFileSystemURL(cordova.file.dataDirectory, dir => {
-    dir.getFile(fileNameOnDevice, { create: true }, file => {
-      file.file(f => {
-        const reader = new FileReader();
-        reader.onloadend = function() {
-          let applications = [];
-        if (this.result) {
-            try {
-              applications = JSON.parse(this.result);
-            } catch (err) {
-              console.warn('JSON parse error, creating new array');
-            }
-          }
-          applications.push(data);
-
-          file.createWriter(writer => {
-            writer.onwriteend = () => console.log('Application saved successfully!');
-            writer.onerror = err => console.error('Write error:', err);
-            writer.write(JSON.stringify(applications, null, 2));
-          });
-        };
-             f.arrayBuffer ? reader.readAsText(f) : reader.readAsText(f);
-      });
-    });
-  }, err => console.error('FS error:', err));
+  const applications = JSON.parse(localStorage.getItem('jobApplications') || '[]');
+  applications.push(data);
+  localStorage.setItem('jobApplications', JSON.stringify(applications));
+  callback(true);
 }
 
+function checkIfAlreadyApplied(jobId, callback) {
+  const applications = JSON.parse(localStorage.getItem('jobApplications') || '[]');
+  const alreadyApplied = applications.some(app => app.job_id === jobId);
+  callback(alreadyApplied);
+}
 
-fetch('data/jobs.json')
-    .then(response => response.json())
-    .then(jobs => {
-
-      const job = jobs.find(job => job.id === jobId);
-      if (!job) {
-        document.body.innerHTML = '<h2>Job not found</h2>';
-        return;
-      }
-      document.getElementById('title').textContent += job.title;
-      document.getElementById('company').textContent += job.company;
-      document.getElementById('location').textContent += job.location;
-      document.getElementById('type').textContent += job.type;
-      document.getElementById('salary').textContent += job.salary;
-      document.getElementById('description').textContent += job.description;
-    });
 document.getElementById('applyBtn').addEventListener('click', () => {
+  if (!currentJob) {
+    alert('Job data not loaded yet. Please wait.');
+    return;
+  }
+
   const fileInput = document.getElementById('resume');
 
   if (!fileInput.files.length) {
@@ -71,9 +64,24 @@ document.getElementById('applyBtn').addEventListener('click', () => {
     alert('Only PDF files are allowed');
     return;
   }
-  setTimeout(() => {
-  saveJobApplication(jobId,file.name)
-   }, 100);
-  alert(`Job Applied: ${file.name}`);
+
+  checkIfAlreadyApplied(jobId, (alreadyApplied) => {
+    if (alreadyApplied) {
+      alert('You have already applied for this job.');
+      return;
+    }
+
+    saveJobApplication(jobId, file.name, currentJob, (success) => {
+      if (success) {
+        alert(`Job Applied: ${file.name}`);
+      } else {
+        alert('Failed to apply. Please try again.');
+      }
+    });
+  });
+});
+
+document.addEventListener('deviceready', () => {
+  
 });
 
